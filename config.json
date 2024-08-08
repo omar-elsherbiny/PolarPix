@@ -1,5 +1,11 @@
 {
-    "top_padding": 100,
-    "bottom_padding": 100,
-    "side_padding": 70
+    "top_padding": 300,
+    "bottom_padding": 200,
+    "side_padding": 100,
+    "frame_color": [
+        255,
+        255,
+        255
+    ],
+    "resize_factor": 0.5
 }
