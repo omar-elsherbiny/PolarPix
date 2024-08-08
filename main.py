@@ -23,14 +23,20 @@ pil_image = Image.open(filename)
 
 width, height = [int(dim * config["resize_factor"]) for dim in pil_image.size]
 framed_width = width + 2 * config["side_padding"]
-framed_height = height + config["top_padding"] + config["bottom_padding"]
+framed_height = (
+    height
+    + config["top_margin"]
+    + config["top_padding"]
+    + config["bottom_padding"]
+    + config["bottom_margin"]
+)
 
 framed_image = Image.new(
     pil_image.mode, (framed_width, framed_height), tuple(config["frame_color"])
 )
 framed_image.paste(
     pil_image.resize((width, height), Image.LANCZOS),
-    (config["side_padding"], config["top_padding"]),
+    (config["side_padding"], config["top_margin"] + config["top_padding"]),
 )
 
 # Adding Text
@@ -39,7 +45,7 @@ font1 = ImageFont.truetype("MonaSans-Medium.ttf", 65)
 font2 = ImageFont.truetype("MonaSans-Regular.ttf", 40)
 
 drawn_image.text(
-    (config["side_padding"], config["top_padding"]),
+    (config["side_padding"], config["top_margin"]),
     "Nice Car",
     font=font1,
     fill=tuple(config["text_color"]),

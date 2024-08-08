@@ -1,16 +1,18 @@
 {
-    "top_padding": 300,
-    "bottom_padding": 200,
+    "top_margin": 200,
+    "bottom_margin": 100,
+    "top_padding": 100,
+    "bottom_padding": 100,
     "side_padding": 100,
     "frame_color": [
         255,
         255,
         255
     ],
-    "resize_factor": 0.5,
     "text_color": [
         20,
         20,
         20
-    ]
+    ],
+    "resize_factor": 0.5
 }
