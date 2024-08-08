@@ -8,12 +8,20 @@ from tkinter.filedialog import askopenfilename
 Tk().withdraw()
 filename = askopenfilename(
     defaultextension="*.jpg",
-    filetypes=[("Input Image", ("*.tif", "*.tiff", "*.png", "*.jpg", "*.jpeg", "*.JPG", "*.JPEG"))],
+    filetypes=[
+        (
+            "Input Image",
+            ("*.tif", "*.tiff", "*.png", "*.jpg", "*.jpeg", "*.JPG", "*.JPEG"),
+        )
+    ],
 )
 output_file = askopenfilename(
     defaultextension="*.jpg",
     filetypes=[("Output Image", "*")],
 )
+
+if not filename or not output_file:
+    exit()
 
 # Loading Config
 config = {}
@@ -57,8 +65,8 @@ framed_image.paste(
 
 # Adding Text
 drawn_image = ImageDraw.Draw(framed_image)
-font1 = ImageFont.truetype(config['font_file_1'], config["font_size_1"])
-font2 = ImageFont.truetype(config['font_file_2'], config["font_size_2"])
+font1 = ImageFont.truetype(config["font_file_1"], config["font_size_1"])
+font2 = ImageFont.truetype(config["font_file_2"], config["font_size_2"])
 
 drawn_image.text(
     (config["side_padding"] + config["text_side_offset"], config["top_margin"]),
