@@ -8,11 +8,11 @@ from tkinter.filedialog import askopenfilename
 Tk().withdraw()
 filename = askopenfilename(
     defaultextension="*.jpg",
-    filetypes=[("Image", ("*.tiff", "*.png", "*.jpg", "*.jpeg", "*.JPG", "*.JPEG"))],
+    filetypes=[("Input Image", ("*.tif", "*.tiff", "*.png", "*.jpg", "*.jpeg", "*.JPG", "*.JPEG"))],
 )
 output_file = askopenfilename(
     defaultextension="*.jpg",
-    filetypes=[("Image", "*")],
+    filetypes=[("Output Image", "*")],
 )
 
 # Loading Config
