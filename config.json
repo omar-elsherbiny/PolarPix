@@ -1,9 +1,12 @@
 {
-    "top_margin": 200,
+    "top_margin": 100,
     "bottom_margin": 100,
-    "top_padding": 100,
+    "top_padding": 200,
     "bottom_padding": 100,
     "side_padding": 100,
+    "text_vertical_spacing": 10,
+    "text_horizontal_spacing": 50,
+    "text_side_offset": 0,
     "frame_color": [
         255,
         255,
