@@ -2,14 +2,27 @@ import json
 import exiv2
 from PIL import Image, ImageDraw, ImageFont
 from colorthief import ColorThief
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
 
-filename = "img.jpg"
-output_file = "res.jpg"
+Tk().withdraw()
+filename = askopenfilename(
+    defaultextension="*.jpg",
+    filetypes=[("Image", ("*.tiff", "*.png", "*.jpg", "*.jpeg", "*.JPG", "*.JPEG"))],
+)
+output_file = askopenfilename(
+    defaultextension="*.jpg",
+    filetypes=[("Image", "*")],
+)
 
 # Loading Config
 config = {}
 with open("config.json", "r") as config_file:
     config = json.load(config_file)
+    for key, value in config.items():
+        if type(value) == int:
+            config[key] = max(0, value)
+
 
 # Extracting MetaData
 exiv2.enableBMFF()
@@ -44,8 +57,8 @@ framed_image.paste(
 
 # Adding Text
 drawn_image = ImageDraw.Draw(framed_image)
-font1 = ImageFont.truetype("MonaSans-SemiBold.ttf", config["font_size_1"])
-font2 = ImageFont.truetype("MonaSans-Regular.ttf", config["font_size_2"])
+font1 = ImageFont.truetype(config['font_file_1'], config["font_size_1"])
+font2 = ImageFont.truetype(config['font_file_2'], config["font_size_2"])
 
 drawn_image.text(
     (config["side_padding"] + config["text_side_offset"], config["top_margin"]),
@@ -165,3 +178,4 @@ for swatch in palette:
     left_offset += swatch_width
 
 framed_image.show()
+framed_image.save(output_file)

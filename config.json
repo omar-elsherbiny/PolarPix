@@ -19,6 +19,8 @@
         20
     ],
     "resize_factor": 0.5,
+    "font_file_1": "./MonaSans-SemiBold.ttf",
+    "font_file_2": "./MonaSans-Regular.ttf",
     "font_size_1": 65,
     "font_size_2": 50,
     "pallete_color_count": 5
