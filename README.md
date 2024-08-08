@@ -1,5 +1,7 @@
 # PolarPix
-Saw a bunch of photographers on reddit posting photos in a similar format, so I decided to automate it in python!
+Saw a some photographers on reddit posting photos in a similar format, so I decided to automate it in python!
+
+credits to: [JohnnyFootball16](https://www.reddit.com/r/SonyAlpha/comments/1em4g9k/first_try_at_night_photography/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button) for the inspiration
 # Dependancies
 Install all required dependencies with pip using:
 ```bash
