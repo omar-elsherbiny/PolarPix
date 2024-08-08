@@ -1,12 +1,13 @@
 {
-    "top_margin": 100,
-    "bottom_margin": 100,
+    "top_margin": 200,
+    "bottom_margin": 200,
     "top_padding": 200,
-    "bottom_padding": 100,
-    "side_padding": 100,
-    "text_vertical_spacing": 10,
-    "text_horizontal_spacing": 50,
-    "text_side_offset": 0,
+    "bottom_padding": 230,
+    "side_padding": 120,
+    "text_vertical_spacing": 15,
+    "text_horizontal_spacing": 40,
+    "text_side_offset": 20,
+    "palette_height": 120,
     "frame_color": [
         255,
         255,
@@ -19,5 +20,6 @@
     ],
     "resize_factor": 0.5,
     "font_size_1": 65,
-    "font_size_2": 45
+    "font_size_2": 50,
+    "pallete_color_count": 5
 }

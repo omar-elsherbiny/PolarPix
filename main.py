@@ -1,8 +1,9 @@
 import json
 import exiv2
 from PIL import Image, ImageDraw, ImageFont
+from colorthief import ColorThief
 
-filename = "IMG_5600.jpg"
+filename = "img.jpg"
 output_file = "res.jpg"
 
 # Loading Config
@@ -141,5 +142,26 @@ drawn_image.text(
     font=font2,
     fill=tuple(config["text_color"]),
 )
+
+# Adding Pallete
+palette = ColorThief(filename).get_palette(
+    color_count=config["pallete_color_count"], quality=10
+)
+
+swatch_width = width / config["pallete_color_count"]
+left_offset = config["side_padding"]
+top_offset = (
+    config["top_margin"] + config["top_padding"] + height + config["bottom_padding"]
+)
+
+for swatch in palette:
+    drawn_image.rectangle(
+        [
+            (left_offset, top_offset - config["palette_height"]),
+            (left_offset + swatch_width, top_offset),
+        ],
+        fill=swatch,
+    )
+    left_offset += swatch_width
 
 framed_image.show()
