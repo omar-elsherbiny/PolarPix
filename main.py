@@ -2,7 +2,7 @@ import json
 import exiv2
 from PIL import Image, ImageDraw, ImageFont
 
-filename = "img.jpg"
+filename = "IMG_5600.jpg"
 output_file = "res.jpg"
 
 # Loading Config
@@ -19,7 +19,6 @@ metadata_keys = [str(key).split(":") for key in metadata]
 metadata = {
     x[0].replace("Exif.", "").strip(): ":".join(x[1:]).strip() for x in metadata_keys
 }
-[print(f"{key: <40}  {metadata[key]: >20}") for key in metadata]
 
 # Adding Frame
 pil_image = Image.open(filename)
@@ -44,8 +43,8 @@ framed_image.paste(
 
 # Adding Text
 drawn_image = ImageDraw.Draw(framed_image)
-font1 = ImageFont.truetype("MonaSans-Medium.ttf", 65)
-font2 = ImageFont.truetype("MonaSans-Regular.ttf", 40)
+font1 = ImageFont.truetype("MonaSans-SemiBold.ttf", config["font_size_1"])
+font2 = ImageFont.truetype("MonaSans-Regular.ttf", config["font_size_2"])
 
 drawn_image.text(
     (config["side_padding"] + config["text_side_offset"], config["top_margin"]),
