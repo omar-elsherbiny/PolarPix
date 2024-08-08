@@ -32,3 +32,7 @@ Use the `config.json` file to format the picture as you want
 - `pallete_color_count` is the number of color that are gonna be picked in the pallete
 
 # Examples
+![res](https://github.com/user-attachments/assets/ebd9f0b0-4a89-4276-90f9-e95fc2123354)
+![res1](https://github.com/user-attachments/assets/d5ef80b6-c9d8-49f9-a5df-72603af8e314)
+![res2](https://github.com/user-attachments/assets/952d15ea-d80e-4c8d-a263-949b8129da9a)
+*made with default `config.json`*
