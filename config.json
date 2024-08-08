@@ -7,5 +7,10 @@
         255,
         255
     ],
-    "resize_factor": 0.5
+    "resize_factor": 0.5,
+    "text_color": [
+        20,
+        20,
+        20
+    ]
 }

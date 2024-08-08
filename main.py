@@ -15,6 +15,8 @@ exiv2.enableBMFF()
 exiv_image = exiv2.ImageFactory.open(filename)
 exiv_image.readMetadata()
 metadata = exiv_image.exifData()
+metadata_keys = [str(key).split(":") for key in metadata]
+metadata = {x[0].replace("Exif.", "").strip(): x[1].strip() for x in metadata_keys}
 
 # Adding Frame
 pil_image = Image.open(filename)
@@ -29,6 +31,18 @@ framed_image = Image.new(
 framed_image.paste(
     pil_image.resize((width, height), Image.LANCZOS),
     (config["side_padding"], config["top_padding"]),
+)
+
+# Adding Text
+drawn_image = ImageDraw.Draw(framed_image)
+font1 = ImageFont.truetype("MonaSans-Medium.ttf", 65)
+font2 = ImageFont.truetype("MonaSans-Regular.ttf", 40)
+
+drawn_image.text(
+    (config["side_padding"], config["top_padding"]),
+    "Nice Car",
+    font=font1,
+    fill=tuple(config["text_color"]),
 )
 
 framed_image.show()
