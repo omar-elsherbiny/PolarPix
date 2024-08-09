@@ -36,5 +36,5 @@ Use the `config.json` file to format the picture as you want
 # Examples
 ![res](https://github.com/user-attachments/assets/ebd9f0b0-4a89-4276-90f9-e95fc2123354)
 ![res1](https://github.com/user-attachments/assets/d5ef80b6-c9d8-49f9-a5df-72603af8e314)
-![res2](https://github.com/user-attachments/assets/952d15ea-d80e-4c8d-a263-949b8129da9a)
-*made with default `config.json`*
+![res2](https://github.com/user-attachments/assets/ad781d18-f8c8-4d02-ad7c-8061025893d2)
+![res3](https://github.com/user-attachments/assets/78ff506a-9e0d-4445-af83-82ea9abb1155)
